@@ -94,7 +94,7 @@ val listOfFoods = listOf(
     ),
     Foods(
         id = 9,
-        title = "Sate Lilit",
+        title = "Gudeg",
         imgRoute = R.drawable.gudeg,
         shortDesc = "Hidangan khas Daerah Istimewa Yogyakarta yang terbuat dari nangka muda yang dimasak dengan santan.",
         description = "Gudeg dibuat dari buah nangka yang tumbuh di banyak pulau di Indonesia, khususnya di Jawa, dan merupakan tanaman pangan yang cukup penting. Sejumlah besar rempah-rempah dan bumbu tertentu digunakan dalam proses perebusan, rempah ini juga meningkatkan masa simpan gudegDi Jawa Tengah, ada legenda yang mengaitkan asal-usul gudeg dengan berdirinya Kesultanan Mataram pada akhir abad ke-16. Dikisahkan bahwa pada saat itu pejuang yang membuka hutan untuk pembangunan ibu kota negara baru di wilayah Yogyakarta saat ini tidak mendapat pasokan makanan yang memadai. Sementara itu hanya pohon nangka dan kelapa yang tumbuh subur di hutan tersebut. Saat masih muda buah nangka keras, dan tidak dapat dimakan mentah, mereka pun merebus buah nangka muda dalam santan dalam panci logam besar dan mengaduknya dengan papan kayu. Proses memasak seperti ini dalam bahasa jawa sehari-hari disebut hangudêk (jw. Hangudek)—mengaduk. Dari kata inilah menurut legenda, menjadi asal mula nama makanan yang ditemukan oleh prajurit Mataram tersebut, Gudeg."
