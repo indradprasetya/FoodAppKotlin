@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -72,15 +74,28 @@ fun ScreenThree(navController: NavController, kode: String) {
             modifier = Modifier
                 .padding(top = 60.dp)
         ) {
-            Image(
-                painter = painterResource(id = listOfFoods[kode].imgRoute),
-                contentDescription = listOfFoods[kode].title,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(300.dp)
-                    .clip(RoundedCornerShape(bottomEnd = 30.dp, bottomStart = 30.dp))
-            )
+            Box(contentAlignment = Alignment.BottomStart) {
+                Image(
+                    painter = painterResource(id = listOfFoods[kode].imgRoute),
+                    contentDescription = listOfFoods[kode].title,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(300.dp)
+                        .clip(RoundedCornerShape(bottomEnd = 30.dp, bottomStart = 30.dp))
+                )
+                Button(
+                    onClick = { /*TODO*/ },
+                    colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF9F8772),
+                    ),
+                    modifier = Modifier.padding(start = 20.dp, bottom = 10.dp)
+                ) {
+                    Icon(imageVector = Icons.Filled.PlayArrow, contentDescription = "play")
+                    Text(text = "Cara Memasak")
+                }
+            }
+
             Column(
                 modifier = Modifier.padding(top = 20.dp, start = 20.dp, end = 20.dp, bottom = 80.dp)
             ) {
