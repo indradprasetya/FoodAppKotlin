@@ -1,6 +1,7 @@
 package com.example.indrayanadianprasetya_tugasrecomposition
 
 import android.annotation.SuppressLint
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -32,11 +33,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
 import androidx.navigation.NavController
 import com.example.indrayanadianprasetya_tugasrecomposition.ui.theme.poppinsFontFamily
 
@@ -75,6 +78,7 @@ fun ScreenThree(navController: NavController, kode: String) {
                 .padding(top = 60.dp)
         ) {
             Box(contentAlignment = Alignment.BottomStart) {
+                val context = LocalContext.current
                 Image(
                     painter = painterResource(id = listOfFoods[kode].imgRoute),
                     contentDescription = listOfFoods[kode].title,
@@ -85,7 +89,12 @@ fun ScreenThree(navController: NavController, kode: String) {
                         .clip(RoundedCornerShape(bottomEnd = 30.dp, bottomStart = 30.dp))
                 )
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = {
+                        val customTabsIntent = CustomTabsIntent
+                            .Builder()
+                            .build()
+                        customTabsIntent.launchUrl(context, listOfFoods[kode].link.toUri())
+                    },
                     colors = androidx.compose.material3.ButtonDefaults.buttonColors(
                         containerColor = Color(0xFF9F8772),
                     ),
@@ -95,7 +104,6 @@ fun ScreenThree(navController: NavController, kode: String) {
                     Text(text = "Cara Memasak")
                 }
             }
-
             Column(
                 modifier = Modifier.padding(top = 20.dp, start = 20.dp, end = 20.dp, bottom = 80.dp)
             ) {
